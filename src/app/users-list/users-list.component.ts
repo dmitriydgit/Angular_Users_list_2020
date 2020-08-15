@@ -31,7 +31,6 @@ export class UsersListComponent implements OnInit {
 
 	sort(direction: string) {
 		this.usersList = this.usersService.sortUsers(direction);
-		console.log(direction)
 	}
 
 	addUser() {
@@ -52,8 +51,6 @@ export class UsersListComponent implements OnInit {
 	deleteUser() {
 		this.usersService.deleteUser(this.selectedList);
 		this.usersList = this.usersService.getUsersList();
-
-		console.log('deleteUser')
 	}
 
 	selectItem(users: MatListOption[]) {
@@ -61,7 +58,5 @@ export class UsersListComponent implements OnInit {
 		users.forEach(element => {
 			this.selectedList.push(element.value)
 		});
-		console.log(this.selectedList)
 	}
-
 }

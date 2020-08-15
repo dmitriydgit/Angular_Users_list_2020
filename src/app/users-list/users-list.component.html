@@ -1,3 +1,4 @@
+<!-- sort & search -->
 <div class="line">
 	<mat-form-field appearance="outline">
 		<mat-label>Сортировка пользователей</mat-label>
@@ -17,6 +18,7 @@
 	</mat-form-field>
 </div>
 
+<!-- add user -->
 <div class='line'>
 
 	<mat-form-field class="item" appearance="outline">
@@ -43,6 +45,7 @@
 	<button class='btn' mat-raised-button color="primary" (click)='addUser()'>Добавить</button>
 </div>
 
+<!-- main users table -->
 <div *ngIf='usersList.length > 0; else empty'>
 	<mat-selection-list #users (selectionChange)="selectItem(users.selectedOptions.selected)">
 		<mat-list-option *ngFor="let user of usersList; let i = index" [ngClass]="{'gray':i%2}" [value]="user">
